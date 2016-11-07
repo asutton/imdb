@@ -1,2 +1,2 @@
 
-add_executable(imdb parser.cpp)
+add_library(imdb actor_parser.cpp)
