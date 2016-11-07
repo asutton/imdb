@@ -36,22 +36,18 @@ namespace imdb {
     std::FILE* input; // The file being parsed.
     V vis; // The visitor.
     
+    int line = 0; // Current line number.
     char buf[max_line]; // The current line.
     char actor[max_str]; // Stores the current actor.
     
-    int line = 0; // Current line number.
-    int sec = 0; // The current section count.
   };
 
 
   // Construct a parser for the given file.
   template<typename V>
   actor_parser<V>::actor_parser(const char* path) 
-    : input(::fopen(path, "r"))
-  {
-    if (!input)
-      throw std::runtime_error("error: cannot open actor file");
-  }
+    : actor_parser(path, V())
+  { }
 
   // Construct a parser for the given file.
   template<typename V>
