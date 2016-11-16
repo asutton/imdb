@@ -1,8 +1,8 @@
 // Copyright (c) 2016 Andrew Sutton
 // All rights reserved
 
-#ifndef IMDB_ACTOR_PARSER_HPP
-#define IMDB_ACTOR_PARSER_HPP
+#ifndef IMDB_MOVIE_PARSER_HPP
+#define IMDB_MOVIE_PARSER_HPP
 
 #include <cassert>
 #include <cstdio>
