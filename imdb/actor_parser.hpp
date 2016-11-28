@@ -144,8 +144,8 @@ namespace imdb {
   template<typename V>
   void 
   actor_parser<V>::get_line() {
-    std::fgets(buf, max_line, input);
-    assert(check_line(buf));
+    char* str = std::fgets(buf, max_line, input);
+    assert(check_line(str));
     ++line;
   }
 
