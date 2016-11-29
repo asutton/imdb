@@ -24,10 +24,14 @@ struct table
   // Returns the row index of the object t, which must be in the table.
   int row(const T& t) const { return &t - rows.data(); }
 
+  // Row access
+  const T& operator[](int n) const { return rows[n]; }
+  T& operator[](int n) { return rows[n]; }
+
   template<typename... Args>
-  T& emplace(Args&&... args) { 
+  int emplace(Args&&... args) { 
     rows.emplace_back(std::forward<Args>(args)...); 
-    return rows.back();
+    return rows.size() - 1;
   }
 
   std::vector<T> rows;
@@ -68,6 +72,9 @@ struct cstr_eq
 struct name_index
 {
   void reserve(int n) { map.reserve(n); }
+
+  // Returns the number of keys in the index.
+  int size() const { return map.size(); }
 
   int find(const std::string& n) const {
     auto iter = map.find(n.c_str());

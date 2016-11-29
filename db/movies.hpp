@@ -6,9 +6,6 @@
 
 #include "table.hpp"
 
-#include <unordered_map>
-#include <vector>
-
 
 // Represents a movie, tv episode, or video game.
 struct movie
@@ -16,9 +13,13 @@ struct movie
   movie(const char* n, const char* y)
     : name(n), year(y)
   { }
+
+  // Add the index of an actor's role in a movie to the cast.
+  void add_role(int r) { roles.push_back(r); }
   
   std::string name;
   std::string year;
+  std::vector<int> roles;
 };
 
 
