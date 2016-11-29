@@ -5,8 +5,9 @@
 #define IMDB_TABLE_HPP
 
 #include <cstring>
-#include <vector>
+#include <string>
 #include <unordered_map>
+#include <vector>
 
 
 // A database-like table. This simply stores a sequence of objects (rows).

@@ -97,9 +97,10 @@ main(int argc, char* argv[]) {
   std::cout << "* index of \"" << kb << "\": " << target << '\n';
 
   // Emulate a simple shell.
-  std::string actor;
-  std::cout << "actor> ";
-  while (std::getline(std::cin, actor)) {
+  while (true) {
+    std::string actor;
+    std::cout << "actor> ";
+    std::getline(std::cin, actor);
     if (!std::cin || actor == "exit")
       break;
     int source = actor_lookup.find(actor);
